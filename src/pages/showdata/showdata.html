@@ -1,0 +1,27 @@
+<ion-header>
+
+    <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Show Data</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  
+<div *ngIf='!authStatus'>
+	<h3>You need to sign-in (from Sign-in page) to see the data</h3>
+	</div>
+	<div *ngIf='authStatus'>
+		<ion-list>
+    <ion-item *ngFor="let user of usersArray">
+	  <p>Id: <strong>{{user?.id}}</strong></p>
+	  <p>Employee Name: <strong>{{user?.employeeName}}</strong></p>
+      <p>Days Work: <strong>{{user?.daysWork}}</strong></p>
+      <p>Hourly Rate: <strong>{{user?.hourlyRate}}</strong></p>
+    </ion-item>
+	</ion-list>
+</div>	
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      {{email}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      {{title}}
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-content>
+      {{description}}
+    </ion-card-content>
+  </ion-card>
+  
+  <button ion-button (click)="delete()">Delete it</button>
+</ion-content>

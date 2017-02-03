@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "firebase": "registry:npm/firebase#3.0.5+20160723033700"
+  },
+  "ambientDependencies": {
+    "firebase": "github:angular/angularfire2/manual_typings/firebase3/firebase3.d.ts#2c9ab3117eeb804e8e4996461eddcf32efa54a56"
+  }
+}

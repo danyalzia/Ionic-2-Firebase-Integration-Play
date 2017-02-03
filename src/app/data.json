@@ -1,0 +1,41 @@
+{
+	"static": "Static Message",
+	"todo": {
+		"uid1": {
+			"email": "123456@yahoo.com",
+			"title": "Call John",
+			"description": "Call the Collegue John for Assignment"
+		},
+
+		"uid2": {
+			"email": "admin@yahoo.com",
+			"title": "Call Mona",
+			"description": "Call the Collegue Mona for Assignment"
+		}
+	},
+	"users": {
+		"uid1": {
+			"employeeName": "Richard",
+			"daysWork": "15 Days",
+			"hourlyRate": "$11.11"
+		},
+
+		"uid2": {
+			"employeeName": "John",
+			"daysWork": "30 Days",
+			"hourlyRate": "$20.88"
+		},
+
+		"uid3": {
+			"employeeName": "Ali",
+			"daysWork": "22 Days",
+			"hourlyRate": "$15.67"
+		},
+
+		"uid4": {
+			"employeeName": "Raza",
+			"daysWork": "22 Days",
+			"hourlyRate": "$34.28"
+		}
+	}
+}

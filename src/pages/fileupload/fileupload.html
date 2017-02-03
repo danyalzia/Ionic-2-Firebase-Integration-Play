@@ -1,0 +1,48 @@
+<ion-header>
+
+    <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>File Upload</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<div *ngIf='!authStatus'>
+	<h3>You need to login to be able to upload file to Firebase</h3>
+    <form (ngSubmit)="login()">
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input [(ngModel)]="userEmail"
+                           type="email" name="userEmail"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Password</ion-label>
+                <ion-input [(ngModel)]="userPassword"
+                           type="password" name="userPassword"></ion-input>
+            </ion-item>
+
+            <hr/>
+            <button type="submit" ion-button>Login!</button>
+        </ion-list>
+    </form>
+	</div>
+	<div *ngIf='authStatus'>
+	<button ion-button (click)="doGetPicture()">Take Picture</button>
+	
+	<ion-list>
+    <ion-item *ngFor="let item of picturesArray; let i = index; trackBy:index">
+      <p>{{i}} - {{item.name}}</p>
+      <p>{{item.lastUpdated}}</p>
+	  <p>{{item.email}}</p>
+      <img [src]=item.URL width="180px" class="padding"/>
+    </ion-item>
+	</ion-list>
+		
+	<button (click)='logout()' ion-button>Logout</button>
+	</div>
+</ion-content>

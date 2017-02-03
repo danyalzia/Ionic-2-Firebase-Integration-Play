@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Todo</ion-title>
+	
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div *ngIf='!authStatus'>
+	<h3>You need to login to see the Todo list</h3>
+    <form (ngSubmit)="login()">
+        <ion-list>
+            <ion-item>
+                <ion-label stacked>Email</ion-label>
+                <ion-input [(ngModel)]="userEmail"
+                           type="email" name="userEmail"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked>Password</ion-label>
+                <ion-input [(ngModel)]="userPassword"
+                           type="password" name="userPassword"></ion-input>
+            </ion-item>
+
+            <hr/>
+            <button type="submit" ion-button>Login!</button>
+        </ion-list>
+    </form>
+	</div>
+	<div *ngIf='authStatus'>
+	<p>Current User: {{userEmail}}</p>
+	<button ion-button (click)="addItem()">Add Item</button>
+	
+	<!-- <ion-list>
+		<ion-item *ngFor="let item of items" (click)="showItem(item)">{{item.title}}</ion-item>
+	</ion-list> -->
+		
+	<ion-list>
+		<ion-item *ngFor="let item of todoArray" (click)="showItem(item)">
+		  <!-- <p>Id: <strong>{{item.id}}</strong></p> -->
+		  <!-- <p>Email: <strong>{{item.email}}</strong></p> -->
+		  <p>Title: <strong>{{item.title}}</strong></p>
+		  <p>Description: <strong>{{item.description}}</strong></p>
+		</ion-item>
+	</ion-list>
+	
+	<button (click)='logout()' ion-button>Logout</button>
+	</div>
+</ion-content>
